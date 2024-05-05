@@ -1,4 +1,5 @@
 .viewtrailer {
+  max-width: 100%;
   min-height: 700px;
   background-size: cover;
   background-position: center;
@@ -7,10 +8,12 @@
 }
 
 .viewtrailer h1 {
+  width: 100%;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .viewtrailer p {
+  width: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -26,6 +29,8 @@
 }
 
 .banner {
+  width: 100%;
+  flex-wrap: wrap;
   color: white;
   background: linear-gradient(45deg, rgb(36, 67, 244), rgb(243, 17, 17));
   align-items: center;
@@ -76,4 +81,33 @@
 
 .sorry {
   margin-top: -550px;
+}
+
+.preview {
+  width: 100%;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+
+  .search {
+    width: 200px;
+  }
+
+  .btn_btn {
+    width: 80px;
+  }
+
+  .viewtrailer {
+    width: 100%;
+  }
+
+  .viewtrailer p {
+    padding: 0 -20px !important;
+  }
+
+  .banner {
+    padding: -50px 0 !important;
+  }
+
 }

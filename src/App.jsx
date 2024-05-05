@@ -82,8 +82,8 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <div className='banner d-flex mx-1 py-5'>
+    <div className=' '>
+      <div className='banner col-md-12 d-flex py-4'>
         <h2 className="text-center">Dreams Trailer Movies</h2>
 
         {/* el buscador */}
@@ -102,11 +102,11 @@ function App() {
       {/* contenedor para previsualizar  */}
 
       {/* esto es por prueba */}
-      <div className=''>
-        <main>
+      <div className='preview'>
+        <main className=''>
           {movie ? (
             <div
-              className="viewtrailer mx-1 mb-5"
+              className="viewtrailer mb-5"
               style={{
                 backgroundImage: `url("${IMAGE_PATH}${movie.backdrop_path}")`,
               }}
@@ -115,7 +115,7 @@ function App() {
                 <>
                   <YouTube
                     videoId={trailer.key}
-                    className="reproductor container"
+                    className="reproductor"
                     //  containerClassName={"youtube-container amru"}
                     opts={{
                       width: "100%",
@@ -137,11 +137,11 @@ function App() {
                   </button>
                 </>
               ) : (
-                <div className="container">
+                
                   <div className="">
                     {trailer ? (
                       <button
-                        className="boton bg-primary"
+                        className="boton bg-primary mx-3"
                         onClick={() => setPlaying(true)}
                         type="button"
                       >
@@ -152,12 +152,12 @@ function App() {
                         <h1>¡Sorry! No trailer available</h1>
                       </div>
                     )}
-                    <div className='overview px-4 py-1 text-center'>
+                    <div className='overview px-1 py-1 text-center'>
                       <h1 className="text-white">{movie.title}</h1>
-                      <p className="text-white">{movie.overview}</p>
+                      <p className="text-white text-center">{movie.overview}</p>
                     </div>
                   </div>
-                </div>
+              
               )}
             </div>
           ) : null}
