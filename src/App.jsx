@@ -113,7 +113,7 @@ function App() {
             >
               {playing ? (
                 <>
-                  <div className="center">
+                  <div className="center mt-5 mx-3">
                     <YouTube
                       videoId={trailer.key}
                       className="reproductor"
