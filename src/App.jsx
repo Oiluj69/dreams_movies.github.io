@@ -17,7 +17,7 @@ function App() {
   const [searchKey, setSearchKey] = useState("");
   //const [selectedMovie, setSelectedMovie] = useState({})
   const [trailer, setTrailer] = useState(null);
-  const [movie, setMovie] = useState({title: "Loading Movies" });
+  const [movie, setMovie] = useState({ title: "Loading Movies" });
   const [playing, setPlaying] = useState(false);
 
   // funcion para realizar la peticion get a la api
@@ -113,51 +113,53 @@ function App() {
             >
               {playing ? (
                 <>
-                  <YouTube
-                    videoId={trailer.key}
-                    className="reproductor"
-                    //  containerClassName={"youtube-container amru"}
-                    opts={{
-                      width: "100%",
-                      height: "100%",
-                      playerVars: {
-                        autoplay: 1,
-                        controls: 0,
-                        cc_load_policy: 0,
-                        fs: 0,
-                        iv_load_policy: 0,
-                        modestbranding: 0,
-                        rel: 0,
-                        showinfo: 0,
-                      },
-                    }}
-                  />
-                  <button onClick={() => setPlaying(false)} className="boton mx-5 bg-primary">
-                    Close
-                  </button>
+                  <div className="center">
+                    <YouTube
+                      videoId={trailer.key}
+                      className="reproductor"
+                      //  containerClassName={"youtube-container amru"}
+                      opts={{
+                        width: "100%",
+                        height: "100%",
+                        playerVars: {
+                          autoplay: 1,
+                          controls: 0,
+                          cc_load_policy: 0,
+                          fs: 0,
+                          iv_load_policy: 0,
+                          modestbranding: 0,
+                          rel: 0,
+                          showinfo: 0,
+                        },
+                      }}
+                    />
+                    <button onClick={() => setPlaying(false)} className="boton mx-5 bg-primary">
+                      Close
+                    </button>
+                  </div>
                 </>
               ) : (
-                
-                  <div className="">
-                    {trailer ? (
-                      <button
-                        className="boton bg-primary mx-3"
-                        onClick={() => setPlaying(true)}
-                        type="button"
-                      >
-                        Play Trailer
-                      </button>
-                    ) : (
-                      <div className='sorry text-center mb-5'>
-                        <h1>¡Sorry! No trailer available</h1>
-                      </div>
-                    )}
-                    <div className='overview px-1 py-1 text-center'>
-                      <h1 className="text-white">{movie.title}</h1>
-                      <p className="text-white text-center">{movie.overview}</p>
+
+                <div className="">
+                  {trailer ? (
+                    <button
+                      className="boton bg-primary mx-3"
+                      onClick={() => setPlaying(true)}
+                      type="button"
+                    >
+                      Play Trailer
+                    </button>
+                  ) : (
+                    <div className='sorry text-center mb-5'>
+                      <h1>¡Sorry! No trailer available</h1>
                     </div>
+                  )}
+                  <div className='overview px-1 py-1 text-center'>
+                    <h1 className="text-white">{movie.title}</h1>
+                    <p className="text-white text-center">{movie.overview}</p>
                   </div>
-              
+                </div>
+
               )}
             </div>
           ) : null}
